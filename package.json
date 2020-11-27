@@ -1,0 +1,33 @@
+{
+  "name": "users-companies-jobs-solution",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "axios": "^0.21.0",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "form-data": "^3.0.0",
+    "jsonschema": "^1.2.4",
+    "jsonwebtoken": "^8.5.0",
+    "locus": "^2.0.1",
+    "morgan": "^1.9.1",
+    "pg": "^8.3.3",
+    "querystring": "^0.2.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "supertest": "^3.4.2"
+  }
+}

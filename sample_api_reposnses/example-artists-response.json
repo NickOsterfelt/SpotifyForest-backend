@@ -1,0 +1,317 @@
+{
+  "artists": {
+    "items": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/4tZwfgrHOc3mvqYlEYSvVi"
+        },
+        "followers": {
+          "href": null,
+          "total": 6841348
+        },
+        "genres": [
+          "electro",
+          "filter house"
+        ],
+        "href": "https://api.spotify.com/v1/artists/4tZwfgrHOc3mvqYlEYSvVi",
+        "id": "4tZwfgrHOc3mvqYlEYSvVi",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/b8aaf4b179bb0a52f29a810fdb0f9d5c16ec2c75",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/8e189c820ba32ffd332393eb60cb1def63bed070",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/70bedd072be9725a0b05e07e3338959e826e7dd7",
+            "width": 160
+          }
+        ],
+        "name": "Daft Punk",
+        "popularity": 83,
+        "type": "artist",
+        "uri": "spotify:artist:4tZwfgrHOc3mvqYlEYSvVi"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/66q9TLB3xM6Yn0kIFiftpd"
+        },
+        "followers": {
+          "href": null,
+          "total": 9833
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/66q9TLB3xM6Yn0kIFiftpd",
+        "id": "66q9TLB3xM6Yn0kIFiftpd",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/226c4f8376f5d48c10e4bc74d889ca91c11f340f",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/58734c5e5239efca3607d82fc1c711c4019449d6",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/34943199b564c22bb4513f91a1fe7f4f46e4de66",
+            "width": 160
+          }
+        ],
+        "name": "J+1",
+        "popularity": 54,
+        "type": "artist",
+        "uri": "spotify:artist:66q9TLB3xM6Yn0kIFiftpd"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/5Pb27ujIyYb33zBqVysBkj"
+        },
+        "followers": {
+          "href": null,
+          "total": 676585
+        },
+        "genres": [
+          "australian electropop",
+          "edm",
+          "indietronica"
+        ],
+        "href": "https://api.spotify.com/v1/artists/5Pb27ujIyYb33zBqVysBkj",
+        "id": "5Pb27ujIyYb33zBqVysBkj",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/d9e14beabb527dbf82580c5cd367adaded33cd64",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/163752f0ffa59e204f1a7b40435b9dfc2c9c48de",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/b7f65a522848c22bce1462c00f0db062c7a9eb19",
+            "width": 160
+          }
+        ],
+        "name": "RÜFÜS DU SOL",
+        "popularity": 73,
+        "type": "artist",
+        "uri": "spotify:artist:5Pb27ujIyYb33zBqVysBkj"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/67qogtRNI0GjUr8PlaG6Zh"
+        },
+        "followers": {
+          "href": null,
+          "total": 465292
+        },
+        "genres": [
+          "brostep",
+          "canadian electronic",
+          "dubstep",
+          "edm",
+          "electro house",
+          "electronic trap",
+          "progressive electro house"
+        ],
+        "href": "https://api.spotify.com/v1/artists/67qogtRNI0GjUr8PlaG6Zh",
+        "id": "67qogtRNI0GjUr8PlaG6Zh",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/a3a80e21ad51f527e7935ed7b11d545d5fcbc43d",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/2243e2636d3dc2f4692d26e9b94d7c4003c8f022",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/48d3c86a476321cd35fa136b53e66e8c72a9563a",
+            "width": 160
+          }
+        ],
+        "name": "Zeds Dead",
+        "popularity": 66,
+        "type": "artist",
+        "uri": "spotify:artist:67qogtRNI0GjUr8PlaG6Zh"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0nmQIMXWTXfhgOBdNzhGOs"
+        },
+        "followers": {
+          "href": null,
+          "total": 4282078
+        },
+        "genres": [
+          "alternative metal",
+          "nu metal"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0nmQIMXWTXfhgOBdNzhGOs",
+        "id": "0nmQIMXWTXfhgOBdNzhGOs",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/e8469ef3c4e45f9574dc963a69043ac3f3e58d41",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/73b9076ebae4987573b1c6dde101d4e1961d91a6",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/50bb40412699a5e3c8a5a5752c1cd3fc9bfac687",
+            "width": 160
+          }
+        ],
+        "name": "Avenged Sevenfold",
+        "popularity": 79,
+        "type": "artist",
+        "uri": "spotify:artist:0nmQIMXWTXfhgOBdNzhGOs"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/6nxWCVXbOlEVRexSbLsTer"
+        },
+        "followers": {
+          "href": null,
+          "total": 2085415
+        },
+        "genres": [
+          "australian dance",
+          "australian electropop",
+          "australian indie",
+          "downtempo",
+          "edm"
+        ],
+        "href": "https://api.spotify.com/v1/artists/6nxWCVXbOlEVRexSbLsTer",
+        "id": "6nxWCVXbOlEVRexSbLsTer",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/0436e3871c9f88b8f83559a70fd8d2f22cb3fd01",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/6b58820d8b73ed2e61d27121c0802d7631414d6d",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/7ac9ab91bd347f8eb5fb451be780a805624617b3",
+            "width": 160
+          }
+        ],
+        "name": "Flume",
+        "popularity": 78,
+        "type": "artist",
+        "uri": "spotify:artist:6nxWCVXbOlEVRexSbLsTer"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0k17h0D3J5VfsdmQ1iZtE9"
+        },
+        "followers": {
+          "href": null,
+          "total": 13223843
+        },
+        "genres": [
+          "album rock",
+          "art rock",
+          "classic rock",
+          "progressive rock",
+          "psychedelic rock",
+          "rock",
+          "symphonic rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0k17h0D3J5VfsdmQ1iZtE9",
+        "id": "0k17h0D3J5VfsdmQ1iZtE9",
+        "images": [
+          {
+            "height": 977,
+            "url": "https://i.scdn.co/image/e69f71e2be4b67b82af90fb8e9d805715e0684fa",
+            "width": 1000
+          },
+          {
+            "height": 625,
+            "url": "https://i.scdn.co/image/d011c95081cd9a329e506abd7ded47535d524a07",
+            "width": 640
+          },
+          {
+            "height": 195,
+            "url": "https://i.scdn.co/image/f0a39a8a196a87a7236bdcf8a8708f6d5d3547cc",
+            "width": 200
+          },
+          {
+            "height": 63,
+            "url": "https://i.scdn.co/image/ec1fb7127168dbaa962404031409c5a293b95ec6",
+            "width": 64
+          }
+        ],
+        "name": "Pink Floyd",
+        "popularity": 84,
+        "type": "artist",
+        "uri": "spotify:artist:0k17h0D3J5VfsdmQ1iZtE9"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0gLjJuczGWhqKVMmVpIT52"
+        },
+        "followers": {
+          "href": null,
+          "total": 203206
+        },
+        "genres": [
+          "alternative emo",
+          "anthem emo",
+          "emo"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0gLjJuczGWhqKVMmVpIT52",
+        "id": "0gLjJuczGWhqKVMmVpIT52",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/c6adfe401fd807a4fa83b1b372e376a1c9b27079",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/fab1eb535cd28339c867e48bc17b6b5da30d70df",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/7928511b54d382eb8d30287bcdecae6137e9a90a",
+            "width": 160
+          }
+        ],
+        "name": "Turnover",
+        "popularity": 61,
+        "type": "artist",
+        "uri": "spotify:artist:0gLjJuczGWhqKVMmVpIT52"
+      }
+    ],
+    "total": 8,
+    "limit": 20,
+    "offset": 0,
+    "previous": null,
+    "href": "https://api.spotify.com/v1/me/top/artists",
+    "next": null
+  }
+}
