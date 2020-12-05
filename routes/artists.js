@@ -2,13 +2,13 @@
 
 const express = require("express");
 const router = express.Router();
-
+const { authRequired } = require("../middleware/auth")
 const Artist = require("../models/artists");
-
-const SpotifyAPI = require("../models/SpotifyAPI")
+const UserArtist = require("../models/user_artists");
+const SpotifyAPI = require("../models/SpotifyAPI");
 
 /** GET / => {users: [user, ...]} */
-router.get("/", async function (req, res, next) {
+router.get("/", authRequired, async function (req, res, next) {
     try {
         const artists = await Artist.findAll();
         return res.json({ artists });
@@ -17,13 +17,13 @@ router.get("/", async function (req, res, next) {
     }
 });
 
-router.get("/:id", async function (req, res, next) {
+router.get("/:id", authRequired, async function (req, res, next) {
     try {
-        const artist = await SpotifyAPI.getArtistDetails(req.body.access_token);
+        const artist = await SpotifyAPI.getArtistDetails(req.access_token);
 
         const data = {
             id: item.id,
-            name: item.name,
+            artist_name: item.name,
             image_url: item.images.length === 0 ? null : item.images[0],
             spotify_url: item.external_urls.spotify ? item.external_urls.spotify : null
 
@@ -38,6 +38,16 @@ router.get("/:id", async function (req, res, next) {
         }
         return res.json({ artist });
     } catch (err) {
+        return next(err);
+    }
+});
+//get user's tracks
+router.get("/user/:id", async function (req, res, next) {
+    try {
+        const artists = UserArtist.getByUser(req.params.id);
+        return res.json({ artists });
+    }
+    catch (err) {
         return next(err);
     }
 });

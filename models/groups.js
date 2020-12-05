@@ -3,28 +3,28 @@ const db = require("../db");
 class Group {
 
     static async add(data) {
-        if (data.friend_group)
-            const res = await db.query(
-                `INSERT INTO groups 
+        const res = await db.query(
+            `INSERT INTO groups 
                 (group_name, num_users, friend_group, info) 
-              VALUES ($1, $2, $3, $4) 
-              RETURNING group_name, num_users, friend_group, info`,
-                [
-                    data.group_name,
-                    data.num_users,
-                    data.image_url,
-                    data.friend_group,
-                    data.info
-                ]);
+              VALUES ($1, $2, 0, $4) 
+              RETURNING id, group_name, num_users, info`,
+            [
+                data.group_name,
+                data.num_users,
+                data.image_url,
+                data.friend_group,
+                data.info
+            ]);
 
         return res.rows[0];
     }
 
     static async findAll() {
         const res = await db.query(
-            `SELECT group_name, num_users, is_full, friend_group, info
+            `SELECT group_name, num_users, is_full, info
               FROM groups
-              ORDER BY group_`
+              WHERE num_users < 10
+              ORDER BY group`
         );
 
         return res.rows;
@@ -32,7 +32,7 @@ class Group {
 
     static async findOne(id) {
         const res = await db.query(
-            `SELECT group_name, num_users, is_full, friend_group, info
+            `SELECT id, group_name, num_users, is_full, info
                 FROM groups 
                 WHERE id = $1`,
             [id]);
@@ -45,7 +45,13 @@ class Group {
             throw error;
         }
 
-        return group;
+        return {
+            groupId : group.id,
+            groupName: group.group_name,
+            numUsers : group.numUsers,
+            isFull : group.is_full,
+            groupInfo : group.info
+        };
     }
 
     static async exists(id) {
@@ -63,13 +69,20 @@ class Group {
 
     static async search(group_name) {
         const res = await db.query(
-            `SELECT group_name, num_users, is_full, friend_group, info
-            FROM tracks
-            WHERE friend_group = false
-            AND group_name ILIKE $1`,
-            [group_name]);
+            `SELECT id, group_name, num_users, is_full, info
+            FROM groups
+            WHERE is_full = false
+            AND group_name ILIKE '${group_name}%'
+            ORDER BY group_name`,
+            );
 
-        return res.rows;
+        return res.rows.map((group) => ({
+            groupId : group.id,
+            groupName: group.group_name,
+            numUsers : group.num_users,
+            is_full: group.is_full,
+            groupInfo : group.info
+        }));
     }
 
     static async increment_group_size(id) {
@@ -83,8 +96,8 @@ class Group {
             );
             return res.rows[0]
         }
-        catch (e){
-            if(e.code === 23514) {
+        catch (e) {
+            if (e.code === 23514) {
                 let badRequest = new Error(`Group with id: ${id}, is full`);
                 badRequest.status = 400;
                 throw badRequest;
@@ -103,14 +116,14 @@ class Group {
                 RETURNING num_users`,
                 [id]
             );
-            if(res.rows.num_users === 0){
+            if (res.rows.num_users === 0) {
                 res = await this.remove(id);
                 return res;
             }
             return res.rows[0];
         }
-        catch (e){
-            if(e.code === 23514) {
+        catch (e) {
+            if (e.code === 23514) {
                 let badRequest = new Error(`Group with id: ${id}, is already empty`);
                 badRequest.status = 400;
                 throw badRequest;

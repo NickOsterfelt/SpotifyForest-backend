@@ -3,7 +3,7 @@ const request = require('request');
 
 const SPOTIFY_BASE_URL = "https://api.spotify.com/v1";
 const { SPOTIFY_CLIENT_ID, SPOTIFY_SECRET, NUM_TOP_TRACKS, NUM_TOP_ARTISTS } = require("../config");
-
+const createToken = require("../helpers/createToken");
 
 class SpotifyAPI {
     
@@ -67,7 +67,8 @@ class SpotifyAPI {
         }
 
         const access_token = await getToken();
-        return access_token
+        let newToken = createToken({access_token, refresh_token});
+        return newToken;
     }
 }
 

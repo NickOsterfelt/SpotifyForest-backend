@@ -12,7 +12,7 @@ class Artist {
         `INSERT INTO artists 
             (id, artist_name, image_url, spotify_url) 
           VALUES ($1, $2, $3, $4) 
-          RETURNING id, name, image_url, spotify_url`,
+          RETURNING id, artist_name, image_url, spotify_url`,
         [
           data.id,
           data.artist_name,

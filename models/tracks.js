@@ -10,9 +10,9 @@ class Track {
   static async add(data) {
     const result = await db.query(
         `INSERT INTO tracks 
-            (id, name, image_url, spotify_url, artist_id, artist_name) 
+            (id, track_name, image_url, spotify_url, artist_id, artist_name) 
           VALUES ($1, $2, $3, $4, $5, $6) 
-          RETURNING id, name, image_url, spotify_url, artist_id, artist_name`,
+          RETURNING id, track_name, image_url, spotify_url, artist_id, artist_name`,
         [
           data.id,
           data.track_name,
@@ -37,7 +37,7 @@ class Track {
   }
   static async exists(id) {
     const trackRes = await db.query(
-      `SELECT id 
+      `SELECT track_name
         FROM tracks
         WHERE id = $1`,
         [id]);

@@ -13,9 +13,14 @@ app.use(morgan("tiny"));
 // const authRoutes = require("./routes/auth");
 const usersRoutes = require("./routes/users");
 const loginRoutes = require("./routes/login");
-
+const groupRoutes = require("./routes/groups");
+const trackRoutes = require("./routes/tracks");
+const artistRoutes = require('./routes/artists');
 app.use("/login", loginRoutes);
 app.use("/users", usersRoutes);
+app.use("/groups", groupRoutes);
+app.use("/tracks", trackRoutes);
+app.use("/artists", artistRoutes);
 // app.use("/", authRoutes);
 
 /** 404 handler */
@@ -28,8 +33,22 @@ app.use(function (req, res, next) {
   return next(err);
 });
 
-/** general error handler */
 
+//401 handler to catch spotify 401 errors
+app.use(function(err, req, res, next){
+  if(err.response && err.response.status === 401 ) {
+    res.status(401);
+    return res.json({
+      error: err,
+      message: err.message
+    });
+  }
+  else{
+    return next(err);
+  }
+});
+
+/** general error handler */
 app.use(function (err, req, res, next) {
   if (err.stack) console.log(err.stack);
 

@@ -4,14 +4,13 @@ const querystring = require('querystring');
 const router = new express.Router();
 const request = require('request'); // "Request" library
 const stateKey = 'spotify_auth_state';
-
+const createToken = require("../helpers/createToken")
 const { SPOTIFY_CLIENT_ID, SPOTIFY_SECRET} = require("../config.js");
 
 const SpotifyAPI = require("../models/SpotifyAPI");
 const redirect_uri = 'http://localhost:3001/login/callback'; // Your redirect uri
 
 let generateRandomString = function(length) {
-
     let text = '';
     const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   
@@ -64,9 +63,10 @@ router.get('/callback', async function(req, res){
     request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
 
-        var access_token = body.access_token,
-            refresh_token = body.refresh_token;
-
+        const access_token = body.access_token,
+              refresh_token = body.refresh_token;
+        const jwt = createToken({access_token, refresh_token})
+        console.log(jwt);
         var options = {
           url: 'https://api.spotify.com/v1/me',
           headers: { 'Authorization': 'Bearer ' + access_token },
@@ -77,12 +77,11 @@ router.get('/callback', async function(req, res){
         request.get(options, function(error, response, body) {
           console.log(body);
         });
-
+      
         // we can also pass the token to the browser to make requests from there
         res.redirect('http://localhost:3000/loginCallback?' +
           querystring.stringify({
-            access_token: access_token,
-            refresh_token: refresh_token
+            jwt : jwt
           }));
       } else {
         res.redirect('/#' +

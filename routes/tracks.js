@@ -2,13 +2,13 @@
 
 const express = require("express");
 const router = express.Router();
-
+const {authRequired} = require("../middleware/auth");
 const Track = require("../models/tracks");
 
 const SpotifyAPI = require("../models/SpotifyAPI")
 
 /** GET / => {users: [user, ...]} */
-router.get("/", async function (req, res, next) {
+router.get("/", authRequired, async function (req, res, next) {
   try {
     const tracks = await Track.findAll();
     return res.json({ tracks });
@@ -17,13 +17,13 @@ router.get("/", async function (req, res, next) {
   }
 });
 
-router.get("/:id", async function (req, res, next) {
+router.get("/:id", authRequired, async function (req, res, next) {
   try {
-    const track = await SpotifyAPI.getTrackDetails(req.body.access_token);
+    const track = await SpotifyAPI.getTrackDetails(req.access_token);
 
     const data = {
       id: item.id,
-      name: item.name,
+      track_name: item.name,
       image_url: item.album.images.length === 0 ? null : item.album.images[0],
       spotify_url: item.external_urls.spotify ? item.external_urls.spotify : null,
       artist_id: item.artists[0].id,
@@ -40,6 +40,16 @@ router.get("/:id", async function (req, res, next) {
     return res.json({ track });
   } catch (err) {
     return next(err);
+  }
+});
+//get user's tracks
+router.get("/user/:id", async function (req, res, next) {
+  try {
+      const tracks = UserTracks.getByUser(req.params.id);
+      return res.json({ tracks });
+  }
+  catch (err) {
+      return next(err);
   }
 });
 
